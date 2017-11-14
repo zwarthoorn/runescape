@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <style>
+        ul li{
+            display: inline;
+        }
+    </style>
+
+    {% for item in allItems %}
+        <ul>
+        <li><strong>Id: </strong>{{ item.id|e }}</li>
+        <li><strong>Name: </strong>{{ item.name|e }}</li>
+        <li><strong>Averige: </strong>{{ item.priceAverage|e }}</li>
+        <li><strong>Buy Price: </strong>{{ item.priceLow|e }}</li>
+        <li><strong>Sell price: </strong>{{ item.priceHigh|e }}</li>
+            <li><strong>Members: </strong> {{ item.member|e ? 'yes' : 'no' }}</li>
+
+        </ul>
+    {% endfor %}
+
+{% endblock %}
